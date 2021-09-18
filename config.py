@@ -21,10 +21,15 @@ servers = {
     "Paradise Station 13": ["Paradise Station", "paradise", "byond.nanotrasen.se", 6666, "fetch"],
     "Aurora Station": ["Aurora Station", "ss13"],
     "VOREStation": ["VOREStation", "citadel", "citadel-station.net", 44150, "fetch"],
-    "Citadel Station 13": ["Citadel Station", "citadel", "citadel-station.net", 44130, "fetch"],
+    "Citadel Station": ["Citadel Station", "citadel", "citadel-station.net", 44130, "fetch"],
     "CM-SS13": ["Colonial Marines", "cm", "play.cm-ss13.com", 1400, "fetch"],
+    "T.E. station, 18+": ["Transcendent Enemy", "citadel", "102.165.213.19", 3260, "fetch"],
+    "(MRP-HRP) Sandstorm Station 13": ["Sandstorm Station 13", "sandstorm", "179.214.120.49", 8100, "fetch"],
+    "Hyper Station 13": ["Hyper Station 13", "hyper", "172.93.98.2", 8058, "fetch"],
+    "Nostra-13": ["Nostra-13", "nostra", "31.135.174.235", 1337, "fetch"],
+    "Nebula 13 Brasil": ["Nebula Station 13", "nebula", "20.206.65.244", 2030, "fetch"],
     "ss13": ["Unknown Server", "ss13"]
 }
 
 # formula: "Server Name": ["Big text name", "icon", "ip", port]
-client_id = "440289271580983308"
+client_id = "888067353458380821"

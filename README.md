@@ -12,6 +12,23 @@ If you want sPeCiAl SuPpOrT feel free to contact me:
 [My Dev Discord Server](https://discord.gg/JF3kg77)
 
 ---
+## Fork info
+Done by SandPoot, this is an attempt of making this work better.
+
+## Compiling for testing
+Requirements:
+Python 3.6+?
+and doing all those:
+```
+get-pip.py
+pip install pypresence
+pip install wheel
+pip install pywin32
+pip install psutil
+pip install requests
+```
+
+Afterwards you can just run main.py
 
 ## Installation
 
