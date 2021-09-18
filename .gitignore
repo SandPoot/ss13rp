@@ -2,3 +2,9 @@
 .vscode/
 # Ignores local cached file
 __pycache__/
+
+# Ignore build cache
+dist/install/lib/
+dist/install/python*
+dist/main/lib/
+dist/main/python*

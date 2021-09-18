@@ -20,7 +20,7 @@ try:
     install_path = 'C:\\Users\\'+USER_NAME+'\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\'
 
     print("Installing...\n")
-    url = "https://github.com/SandPoot/ss13rp/raw/master/dist/ss13rp.exe"
+    url = "https://github.com/SandPoot/ss13rp/raw/master/dist/main/ss13rp.exe"
     response = requests.get(url, stream=True)
     handle = open(install_path+"ss13rp.exe", "wb")
     dur = 0
