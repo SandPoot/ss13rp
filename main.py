@@ -70,20 +70,17 @@ else:
 
                     print(status)
 
-                    if server[0] in ["Hippie Station", "Yogstation 13", "BeeStation", "Bagil Station", "Terry Station", "Sybil Station", "Citadel Station", "FTL13", "T.E. station, 18+", "Sandstorm Station 13", "Hyper Station 13", "Nostra-13", "Nebula Station 13"]:
+                    if server[0] in ["Hippie Station", "Yogstation 13", "BeeStation", "Bagil Station", "Terry Station", "Sybil Station", "Citadel Station", "FTL13", "Transcendent Enemy", "Sandstorm Station 13", "Hyper Station 13", "Nostra-13", "Nebula Station 13"]:
                         activity["start"] = int(time.time())-int(status["round_duration"])
-                        activity["party_id"] = str(status["round_id"]) + " " + status["map_name"] #apparently terry has NO revision
+
+                        if "round_id" in status and status["round_id"]: #Somehow lacks round id, go through it
+                            activity["party_id"] = str(status["round_id"]) + " " + status["map_name"] #apparently terry has NO revision
 
                         if "mode" in status and status["mode"]:
                             activity["state"] = status["map_name"] + ", " + status["mode"]
                         else:
                             activity["state"] = status["map_name"] + ", " + "dynamic" #probably tg fork
                         activity["buttons"] = [{"label": "Join", "url": "byond://" + server[2] + ":" + str(server[3])}]
-
-                        if "popcap" in status and status["popcap"]: #fetch popcap
-                            activity["party_size"] = [int(status["players"])] + [int(status["popcap"])]
-                        else: #best guess maxcap
-                            activity["party_size"] = [int(status["players"])] + [120]
 
                         if "popcap" in status and status["popcap"]: #fetch popcap
                             activity["party_size"] = [int(status["players"])] + [int(status["popcap"])]
