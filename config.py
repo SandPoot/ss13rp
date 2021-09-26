@@ -23,7 +23,7 @@ servers = {
     "VOREStation": ["VOREStation", "citadel", "citadel-station.net", 44150, "fetch"],
     "Citadel Station": ["Citadel Station", "citadel", "citadel-station.net", 44130, "fetch"],
     "CM-SS13": ["Colonial Marines", "cm", "play.cm-ss13.com", 1400, "fetch"],
-    "T.E. station, 18+": ["Transcendent Enemy", "citadel", "102.165.213.19", 3260, "fetch"],
+    "T.E. station, 18+": ["Transcendent Enemy", "citadel", "102.165.212.119", 3260, "fetch"],
     "(MRP-HRP) Sandstorm Station 13": ["Sandstorm Station 13", "sandstorm", "179.214.120.49", 8100, "fetch"],
     "Hyper Station 13": ["Hyper Station 13", "hyper", "172.93.98.2", 8058, "fetch"],
     "Nostra-13": ["Nostra-13", "nostra", "31.135.174.235", 1337, "fetch"],
