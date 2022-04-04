@@ -70,7 +70,7 @@ else:
 
                     print(status)
 
-                    if server[0] in ["Hippie Station", "Yogstation 13", "BeeStation", "Bagil Station", "Terry Station", "Sybil Station", "Citadel Station", "FTL13", "Transcendent Enemy", "Sandstorm Station 13", "Hyper Station 13", "Nostra-13", "Nebula Station 13"]:
+                    if server[0] in ["Hippie Station", "Yogstation 13", "BeeStation", "Bagil Station", "Terry Station", "Sybil Station", "Citadel Station", "FTL13", "Transcendent Enemy", "Sandstorm Station 13", "Hyper Station 13", "Nostra-13", "Sierra Station 13"]:
                         activity["start"] = int(time.time())-int(status["round_duration"])
 
                         if "round_id" in status and status["round_id"]: #Somehow lacks round id, go through it
