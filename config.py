@@ -27,7 +27,7 @@ servers = {
     "(MRP-HRP) Sandstorm Station 13": ["Sandstorm Station 13", "sandstorm", "51.81.48.185", 8100, "fetch"],
     "Hyper Station 13": ["Hyper Station 13", "hyper", "172.93.98.2", 8058, "fetch"],
     "Nostra-13": ["Nostra-13", "nostra", "31.135.174.235", 1337, "fetch"],
-    "Nebula 13 Brasil": ["Nebula Station 13", "nebula", "20.206.65.244", 2030, "fetch"],
+    "Sierra Station 13": ["Sierra Station 13", "sierra", "47.208.93.81", 25565, "fetch"],
     "ss13": ["Unknown Server", "ss13"]
 }
 
