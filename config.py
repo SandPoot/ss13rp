@@ -28,6 +28,7 @@ servers = {
     "Hyper Station 13": ["Hyper Station 13", "hyper", "172.93.98.2", 8058, "fetch"],
     "Nostra-13": ["Nostra-13", "nostra", "31.135.174.235", 1337, "fetch"],
     "Sierra Station 13": ["Sierra Station 13", "sierra", "47.208.93.81", 25565, "fetch"],
+    "Shiptest": ["Shiptest", "shiptest", "byond://join.shiptest.net", 41372, "fetch"],
     "ss13": ["Unknown Server", "ss13"]
 }
 
