@@ -57,6 +57,12 @@ else:
                 server = "ss13"
                 return servers[server]
 
+    def get_content(entry):
+        if entry in status and status[entry]:
+            return status[entry]
+        else:
+            return ""
+
     while True:
         try:
             server = get_server()
@@ -70,22 +76,21 @@ else:
 
                     print(status)
 
-                    if server[0] in ["Hippie Station", "Yogstation 13", "BeeStation", "Bagil Station", "Terry Station", "Sybil Station", "Citadel Station", "FTL13", "Transcendent Enemy", "Sandstorm Station 13", "Hyper Station 13", "Nostra-13", "Sierra Station 13"]:
+                    if server[0] in ["Hippie Station", "Yogstation 13", "BeeStation", "Bagil Station", "Terry Station", "Sybil Station", "Citadel Station", "FTL13", "Transcendent Enemy", "Sandstorm Station 13", "Hyper Station 13", "Nostra-13", "Sierra Station 13", "Shiptest"]:
                         activity["start"] = int(time.time())-int(status["round_duration"])
 
-                        if "round_id" in status and status["round_id"]: #Somehow lacks round id, go through it
-                            activity["party_id"] = str(status["round_id"]) + " " + status["map_name"] #apparently terry has NO revision
+                        map_name = get_content("map_name")
+                        map = map_name if map_name else "No Map"
+                        activity["party_id"] = str(get_content("round_id")) + " " + map #apparently terry has NO revision
 
-                        if "mode" in status and status["mode"]:
-                            activity["state"] = status["map_name"] + ", " + status["mode"]
-                        else:
-                            activity["state"] = status["map_name"] + ", " + "dynamic" #probably tg fork
+                        gamemode = get_content("mode")
+                        mode = gamemode if gamemode else "dynamic"
+                        activity["state"] = map + ", " + mode
                         activity["buttons"] = [{"label": "Join", "url": "byond://" + server[2] + ":" + str(server[3])}]
 
-                        if "popcap" in status and status["popcap"]: #fetch popcap
-                            activity["party_size"] = [int(status["players"])] + [int(status["popcap"])]
-                        else: #best guess maxcap
-                            activity["party_size"] = [int(status["players"])] + [120]
+                        playercap = get_content("popcap")
+                        popcap = playercap if playercap else "120"
+                        activity["party_size"] = [int(get_content("players"))] + [int(popcap)]
 
                     if server[0] in ["Colonial Marines"]:
                         activity["state"] = status["mode"]
