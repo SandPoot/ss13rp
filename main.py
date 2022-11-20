@@ -57,11 +57,11 @@ else:
                 server = "ss13"
                 return servers[server]
 
-    def get_content(entry):
+    def get_content(entry, else_value):
         if entry in status and status[entry]:
             return status[entry]
         else:
-            return ""
+            return else_value if else_value else ""
 
     while True:
         try:
@@ -76,43 +76,40 @@ else:
 
                     print(status)
 
-                    if server[0] in ["Hippie Station", "Yogstation 13", "BeeStation", "Bagil Station", "Terry Station", "Sybil Station", "Citadel Station", "FTL13", "Transcendent Enemy", "Sandstorm Station 13", "Hyper Station 13", "Nostra-13", "Sierra Station 13", "Shiptest"]:
+                    if server[0] in ["Citadel Station", "Transcendent Enemy", "Sandstorm Station 13", "Hyper Station 13", "Nostra-13", "Maconha Station 13", "Shiptest"]:
                         activity["start"] = int(time.time())-int(status["round_duration"])
 
-                        map_name = get_content("map_name")
-                        map = map_name if map_name else "No Map"
+                        map = get_content("map_name", "No Map")
                         activity["party_id"] = str(get_content("round_id")) + " " + map #apparently terry has NO revision
 
-                        gamemode = get_content("mode")
-                        mode = gamemode if gamemode else "dynamic"
+                        mode = get_content("mode", "dynamic")
                         activity["state"] = map + ", " + mode
                         activity["buttons"] = [{"label": "Join", "url": "byond://" + server[2] + ":" + str(server[3])}]
 
-                        playercap = get_content("popcap")
-                        popcap = playercap if playercap else "120"
+                        popcap = get_content("popcap", "120")
                         activity["party_size"] = [int(get_content("players"))] + [int(popcap)]
 
-                    if server[0] in ["Colonial Marines"]:
-                        activity["state"] = status["mode"]
-                        activity["party_size"] = [int(status["players"])]+[300]
-                        activity["start"] = int(time.time())-util.get_sec(*status["stationtime"].split(":"))
+                    #if server[0] in ["Colonial Marines"]:
+                    #    activity["state"] = status["mode"]
+                    #    activity["party_size"] = [int(status["players"])]+[300]
+                    #    activity["start"] = int(time.time())-util.get_sec(*status["stationtime"].split(":"))
 
 
-                    if server[0] in ["Baystation 12"]:
-                        activity["state"] = status["map"]
-                        activity["party_size"] = [int(status["players"])]+[100]
-                        activity["start"] = int(time.time())-util.get_sec(*status["roundduration"].split(":"))
+                    #if server[0] in ["Baystation 12"]:
+                    #    activity["state"] = status["map"]
+                    #    activity["party_size"] = [int(status["players"])]+[100]
+                    #    activity["start"] = int(time.time())-util.get_sec(*status["roundduration"].split(":"))
 
-                    if server[0] in ["Paradise Station"]:
-                        activity["state"] = status["map_name"]
-                        activity["party_size"] = [int(status["players"])]+[250]
-                        activity["start"] = int(time.time())-util.get_sec(*status["roundtime"].split(":"))
+                    #if server[0] in ["Paradise Station"]:
+                    #    activity["state"] = status["map_name"]
+                    #    activity["party_size"] = [int(status["players"])]+[250]
+                    #    activity["start"] = int(time.time())-util.get_sec(*status["roundtime"].split(":"))
 
 
-                    if server[0].startswith("Goonstation"):
-                        activity["state"] = status["map_name"]#+", "+status["mode"]
-                        activity["party_size"] = [int(status["players"])]+[200]
-                        activity["start"] = int(time.time())-int(status["elapsed"])
+                    #if server[0].startswith("Goonstation"):
+                    #    activity["state"] = status["map_name"]#+", "+status["mode"]
+                    #    activity["party_size"] = [int(status["players"])]+[200]
+                    #    activity["start"] = int(time.time())-int(status["elapsed"])
 
                 except Exception as E:
                     print(E)
