@@ -57,7 +57,7 @@ else:
                 server = "ss13"
                 return servers[server]
 
-    def get_content(entry, else_value):
+    def get_content(entry, else_value = ""):
         if entry in status and status[entry]:
             return status[entry]
         else:
