@@ -6,7 +6,7 @@ servers = {
     "Nostra-13": ["Nostra-13", "nostra", "31.135.174.235", 1337, "fetch"],
     "Maconha Station 13": ["Maconha Station 13", "maconha", "20.197.224.192", 1337, "fetch"],
     "Shiptest": ["Shiptest", "shiptest", "join.shiptest.net", 41372, "fetch"],
-    "T.E. TGMC PvE": ["T.E. TGMC", "tgmc", "162.250.125.210", 3262, "fetch"],
+    "tgmc.m": ["T.E. TGMC PvE", "tgmc", "162.250.125.210", 3262, "fetch"],
     "ss13": ["Unknown Server", "ss13"]
 }
 
